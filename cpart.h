@@ -4,13 +4,25 @@
 
 #ifndef YAN834_CPART_H
 #define YAN834_CPART_H
+#include <stdio.h>
 
 //数据类型
+void defineDataType();
+
 // 操作符合表达
-// 控制流程
-// 函数
 // 程序结构
+
+
+// 控制流程
+void flowControl();
+
+// 函数
+void function();
+
 // 数组和指针
+void arrayPoint();
+
+
 
 
 
