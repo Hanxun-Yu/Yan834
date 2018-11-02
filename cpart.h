@@ -18,11 +18,14 @@ void flowControl();
 
 // 函数
 void function();
+void funPoint(int *a, int *b);
+//引用传递是C++的特性,C没有
+//void funReference(int &a, int &b);
 
 // 数组和指针
 void arrayPoint();
 
-
+void printIntArr(int32_t *arr, int32_t size);
 
 
 
