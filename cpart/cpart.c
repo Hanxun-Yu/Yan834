@@ -4,6 +4,20 @@
 
 #include "cpart.h"
 
+
+void cpart() {
+    //defineDataType();
+
+//    function();
+//    arrayPoint();
+//    stdIn();
+
+//    writeFileOver("/cygdrive/d/test_openfile.txt","abcd1234");
+//    readFile("/cygdrive/d/test_openfile.txt");
+
+//    structT();
+    unionT();
+}
 //数据类型
 void defineDataType() {
 

@@ -4,7 +4,13 @@
 
 #ifndef YAN834_CPART_H
 #define YAN834_CPART_H
+
 #include <stdio.h>
+#include "cpart.h"
+#include "cpart_io_std.h"
+#include "cpart_io_file.h"
+#include "cpart_struct_union.h"
+void cpart();
 
 //数据类型
 void defineDataType();
