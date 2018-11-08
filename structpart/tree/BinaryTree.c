@@ -17,11 +17,9 @@
 //    return ret;
 //}
 
-BinaryTree *newBinaryTree(int val) {
+BinaryTree *newBinaryTree(void* val) {
     BinaryTree *ret = malloc(sizeof(BinaryTree));
-    TypeElement *element = malloc(sizeof(TypeElement));
-    element->val = val;
-    ret->data = element;
+    ret->data = val;
     ret->leftTree = NULL;
     ret->rightTree = NULL;
     ret->printTravel = printTravel;
@@ -33,7 +31,7 @@ BinaryTree *newBinaryTree(int val) {
 void printTravel(BinaryTree *this) {
     if(this->leftTree)
         this->leftTree->printTravel(this->leftTree);
-    printf("-%d-",this->data->val);
+    printf("-%p-",(this->data));
     if(this->rightTree)
         this->rightTree->printTravel(this->rightTree);
 }
@@ -41,26 +39,32 @@ void printTravel(BinaryTree *this) {
 void addChildTree(BinaryTree *this, BinaryTree *childTree) {
 //    printf("addChildTree this:%d childTree:%d\n",this->data->val,childTree->data->val);
 
-    if(this->data->val > childTree->data->val) {
-//        printf("addChildTree left\n");
-//        //left
-        if(this->leftTree) {
-//            printf("left:%d\n",this->leftTree->data->val);
+    if(!this->leftTree) {
+        this->leftTree = childTree;
+    } else if(!this->rightTree) {
+        this->rightTree = childTree;
+    } else {
+        int ra = rand()%10;
+        if(ra< 5) {
             this->leftTree->addChildTree(this->leftTree,childTree);
         } else {
-//            printf("left:null");
-            this->leftTree = childTree;
-        }
-    } else {
-//        printf("addChildTree right\n");
-
-//        //right
-        if(this->rightTree) {
-//            printf("right:%d\n",this->rightTree->data->val);
             this->rightTree->addChildTree(this->rightTree,childTree);
-        } else {
-//            printf("right:null\n");
-            this->rightTree = childTree;
         }
     }
+
+//    if(((TypeElement*)this->data)->val > ((TypeElement*)childTree->data)->val) {
+////        //left
+//        if(this->leftTree) {
+//            this->leftTree->addChildTree(this->leftTree,childTree);
+//        } else {
+//            this->leftTree = childTree;
+//        }
+//    } else {
+////        //right
+//        if(this->rightTree) {
+//            this->rightTree->addChildTree(this->rightTree,childTree);
+//        } else {
+//            this->rightTree = childTree;
+//        }
+//    }
 }

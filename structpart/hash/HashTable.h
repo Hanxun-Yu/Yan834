@@ -32,4 +32,6 @@ typedef struct HashTable HashTable;
 
     void hash_table_getKeys(HashTable* ht,char*** keys,int *size);
 
+    void hash_print_table(HashTable* ht);
+
 #endif //YAN834_HASHTABLE_H

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include "structpart.h"
 #include "BinaryTree.h"
+#include "SearchBinaryTree.h"
 #include "Huffman.h"
 #include "HashTable.h"
 void testLinkList() {
@@ -21,12 +22,14 @@ void testLinkList() {
 }
 
 void testBinaryTree() {
-    BinaryTree* rootTree = newBinaryTree(20);
-    BinaryTree* a = newBinaryTree(15);
-    BinaryTree* b = newBinaryTree(25);
-    BinaryTree* c = newBinaryTree(12);
-    BinaryTree* d = newBinaryTree(67);
-    BinaryTree* e = newBinaryTree(45);
+//    BinaryTree* rootTree = newBinaryTree(newTypeElement(24));
+    BinaryTree* rootTree = newSearchBinaryTree(newTypeElement(24));
+    BinaryTree* a = newSearchBinaryTree(newTypeElement(15));
+    BinaryTree* b = newSearchBinaryTree(newTypeElement(25));
+    BinaryTree* c = newSearchBinaryTree(newTypeElement(12));
+    BinaryTree* d = newSearchBinaryTree(newTypeElement(67));
+    BinaryTree* e = newSearchBinaryTree(newTypeElement(45));
+
     rootTree->addChildTree(rootTree,a);
     rootTree->addChildTree(rootTree,b);
     rootTree->addChildTree(rootTree,c);
@@ -38,28 +41,19 @@ void testBinaryTree() {
 
 void testHuffman() {
     HashTable* ht = hash_table_new();
-    hash_table_put(ht,"a",1);
-    hash_table_put(ht,"b",1);
+    hash_table_put(ht,"a1234",56);
+    hash_table_put(ht,"b5645",23);
 
-    hash_table_put(ht,"a",2);
-    hash_table_put(ht,"cawd",2);
+    hash_table_put(ht,"a12",45);
+    hash_table_put(ht,"c7657",21);
 
-    hash_table_put(ht,"da",2);
-    hash_table_put(ht,"ada",2);
-    hash_table_put(ht,"awwd",2);
+    hash_table_put(ht,"g2321",54);
+    hash_table_put(ht,"b123542",43);
+    hash_table_put(ht,"n12232",23);
 
-
-
-    printf("a:%d\n", hash_table_get(ht,"a"));
-    printf("b:%d\n", hash_table_get(ht,"b"));
-    char** keys;
-    int size;
-    hash_table_getKeys(ht,&keys,&size);
-    for(int i=0;i<size;i++) {
-        printf("key:%s\n",keys[i]);
-    }
-
-
+    KVBinaryTree* hufftree = buildHuffmanTree(ht);
+    HashTable* dict = getDataDict(hufftree,1);
+    hash_print_table(dict);
 
 }
 void structpart() {

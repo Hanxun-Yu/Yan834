@@ -5,8 +5,12 @@
 #ifndef YAN834_HUFFMAN_H
 #define YAN834_HUFFMAN_H
 
-#include "BinaryTree.h"
+#include "HashTable.h"
+#include "KVBinaryTree.h"
+#include <stdio.h>
 
-BinaryTree* buildHuffmanTree();
+KVBinaryTree* buildHuffmanTree(HashTable* ht);
+
+HashTable* getDataDict(KVBinaryTree* huffmanTree,int encode);
 
 #endif //YAN834_HUFFMAN_H

@@ -198,3 +198,15 @@ void hash_table_getKeys(HashTable* ht,char*** keys,int *size) {
     *size = index+1;
 }
 
+void hash_print_table(HashTable* ht) {
+    char **keys;
+    int size;
+    hash_table_getKeys(ht, &keys, &size);
+
+    for(int i=0;i<size;i++) {
+        if(keys[i]) {
+            printf("key:%s val:%d\n",keys[i],hash_table_get(ht,keys[i]));
+        }
+    }
+}
+
