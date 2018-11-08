@@ -10,4 +10,4 @@ add_executable(Yan834
         main.c
         ${cpart_list}
         ${structpart_list}
-        structpart/LinkList.h structpart/LinkList.c structpart/structpart.h structpart/structpart.c structpart/tree/BinaryTree.h structpart/TypeElement.h structpart/tree/BinaryTree.c structpart/tree/Huffman.h structpart/hash/HashTable.h structpart/hash/HashTable.c structpart/tree/Huffman.c structpart/tree/SearchBinaryTree.c structpart/tree/SearchBinaryTree.h structpart/TypeElement.c structpart/tree/KVBinaryTree.c structpart/tree/KVBinaryTree.h)
+        structpart/LinkList.h structpart/LinkList.c structpart/structpart.h structpart/structpart.c structpart/tree/BinaryTree.h structpart/TypeElement.h structpart/tree/BinaryTree.c structpart/tree/Huffman.h structpart/hash/HashTable.h structpart/hash/HashTable.c structpart/tree/Huffman.c structpart/tree/SearchBinaryTree.c structpart/tree/SearchBinaryTree.h structpart/TypeElement.c structpart/tree/KVBinaryTree.c structpart/tree/KVBinaryTree.h structpart/sorter.c structpart/sorter.h)

@@ -8,6 +8,7 @@
 #include "SearchBinaryTree.h"
 #include "Huffman.h"
 #include "HashTable.h"
+#include "sorter.h"
 void testLinkList() {
     LinkList* linkList = create(5);
     insert(linkList,1);
@@ -56,9 +57,20 @@ void testHuffman() {
     hash_print_table(dict);
 
 }
+
+void testSort() {
+    int arr[] = {24,13,56,34,73,41,53,23,12,65};
+    int length = sizeof(arr)/ sizeof(int);
+//    bubbleSort(arr,length);
+    insertSort(arr,length);
+    printArr(arr,length);
+}
 void structpart() {
 //    testLinkList();
 //    testBinaryTree();
-    testHuffman();
+//    testHuffman();
+    testSort();
 }
+
+
 
