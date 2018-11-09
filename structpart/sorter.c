@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "sorter.h"
+void insertSort(int *arr, int size);
 
 void swap(int *a, int *b) {
     int temp = *a;
@@ -31,23 +32,13 @@ void bubbleSort(int *arr, int size) {
 void insertSort(int *arr, int size) {
     //We regard the item of index 0 as sorted
     //Thus i start from 1
+
     for (int i = 1; i < size; i++) {
-
-        int found = 0;
-
         //insert to sorted
-        for (int j = 0; j < i; j++) {
-            int temp = arr[i];
-            if (!found && arr[i] > arr[j]) {
-                found = 1;
+        for (int j = i; j > 0; j--) {
+            if(arr[j] < arr[j-1]) {
+                swap(&arr[j],&arr[j-1]);
             }
-
-            if (found) {
-                if (j == i - 1) {
-
-                }
-            }
-
         }
     }
 }

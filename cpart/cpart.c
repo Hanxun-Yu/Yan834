@@ -4,6 +4,7 @@
 
 #include "cpart.h"
 
+void testStatic();
 
 void cpart() {
     //defineDataType();
@@ -16,8 +17,62 @@ void cpart() {
 //    readFile("/cygdrive/d/test_openfile.txt");
 
 //    structT();
-    unionT();
+//    unionT();
+
+
+    //-------------------------------------------------
+
+    int i = 0;
+    int f = 0;
+    int k = 0;
+    k = 2 + i, f + 4;
+    printf("k:%d\n", k);
+    //-------------------------------------------------
+    char ch = 'c';
+    printf("c:%c\n", ch >= 'a' && ch <= 'z' ? ch - 32 + 1 : ch);
+    //-------------------------------------------------
+    double x, y;
+    x = 2;
+    y = x + 2 / 3;
+    printf("y:%f\n", y);
+    //-------------------------------------------------
+    static char xx[] = "12345";
+    char yy[] = {'1', '2', '3', '4', '5'};
+    printf("xx:%d yy:%d\n", sizeof(xx), sizeof(yy));
+    //-------------------------------------------------
+    char a[30] = "myfirstschoolday", *p;
+    p = a;
+    p += 7;
+    printf("%c\n", *p);
+    //-------------------------------------------------
+//    int gama = 0;
+//    while (gama = 2) {
+//
+//    }
+    //-------------------------------------------------
+
+    testStatic();
+    testStatic();
+
+    //-------------------------------------------------
+    int haha = 4;
+    int heihei = 5;
+    int ret = 3;
+    ret *=haha + heihei;
+    printf("%d\n", ret);
+
+
+    //-------------------------------------------------
 }
+
+void testStatic() {
+    static int haha = 0;
+    printf("haha1:%d\n", haha);
+    haha = 1;
+    printf("haha2:%d\n", haha);
+
+}
+
 //数据类型
 void defineDataType() {
 
@@ -74,25 +129,25 @@ void funPoint(int *a, int *b) {
 
 // 数组和指针
 void arrayPoint() {
-    int arr[] = {1,2,3};
-    int arr2[3] = {1,2,3,4};
+    int arr[] = {1, 2, 3};
+    int arr2[3] = {1, 2, 3, 4};
 
-    printIntArr(arr, sizeof(arr)/sizeof(arr[0]));
-    printIntArr(arr2, sizeof(arr2)/sizeof(arr2[0]));
+    printIntArr(arr, sizeof(arr) / sizeof(arr[0]));
+    printIntArr(arr2, sizeof(arr2) / sizeof(arr2[0]));
 
-    int* point = arr;
-    int* point2 = arr;
+    int *point = arr;
+    int *point2 = arr;
 
-    printIntArr(point, sizeof(arr)/sizeof(arr[0]));
-    printIntArr(point2, sizeof(arr2)/sizeof(arr2[0]));
+    printIntArr(point, sizeof(arr) / sizeof(arr[0]));
+    printIntArr(point2, sizeof(arr2) / sizeof(arr2[0]));
 
 }
 
 void printIntArr(int *arr, int size) {
     printf("printIntArr:{");
-    for(int i=0;i<size;i++) {
-        printf(" %d",arr[i]);
-        if(i != size - 1)
+    for (int i = 0; i < size; i++) {
+        printf(" %d", arr[i]);
+        if (i != size - 1)
             printf(",");
     }
     printf("}\n");
