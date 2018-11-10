@@ -74,7 +74,8 @@ void structpart() {
 //    testHuffman();
 //    testSort();
 
-    right2LeftBinaryTreeLeaf();
+    //right2LeftBinaryTreeLeaf();
+    linkMaxNumSearch();
 }
 
 

@@ -15,6 +15,15 @@ LinkList *create(int maxSize) {
     return ret;
 }
 
+Node* newNode(int data) {
+    Node* ret = malloc(sizeof(Node));
+    ret->data = data;
+    ret->next = 0;
+    return ret;
+
+}
+
+
 int insert(LinkList *list, int data) {
     int ret = 0;
     Node *dataNode = malloc(sizeof(Node));
@@ -132,5 +141,19 @@ int reverse(LinkList *list) {
     }
     return ret;
 }
+
+void inverse(Node **h){
+    Node* next = NULL;
+    Node* prev = NULL;
+    Node* current = *h;
+    do{
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    } while(current);
+    *h = prev;
+}
+
 
 
