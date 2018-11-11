@@ -3,8 +3,8 @@
 #include "structpart.h"
 int main() {
 //    printf("Hello, World!\n");
-//    cpart();
-    structpart();
+    cpart();
+//    structpart();
     return 0;
 }
 
