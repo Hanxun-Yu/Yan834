@@ -10,6 +10,7 @@
 #include "HashTable.h"
 #include "sorter.h"
 #include "question.h"
+#include "Queue.h"
 
 void testLinkList() {
     LinkList *linkList = create(5);
@@ -63,19 +64,70 @@ void testHuffman() {
 void testSort() {
     int arr[] = {24, 13, 56, 34, 73, 41, 53, 23, 12, 65};
     int length = sizeof(arr) / sizeof(int);
-    bubbleSort(arr,length);
+//    bubbleDoubleDirSort(arr, length);
 //    insertSort(arr, length);
+    shellSort(arr,length);
     printArr(arr, length);
+}
+
+void testQueue() {
+    Queue *queue = newQueue(10);
+    inQueueInt(queue, 1);
+    inQueueInt(queue, 2);
+
+    inQueueInt(queue, 3);
+
+    dequeue(queue);
+
+    inQueueInt(queue, 4);
+
+    inQueueInt(queue, 5);
+
+    inQueueInt(queue, 6);
+
+    inQueueInt(queue, 7);
+    dequeue(queue);
+
+    inQueueInt(queue, 8);
+
+    inQueueInt(queue, 9);
+
+    inQueueInt(queue, 0);
+
+    inQueueInt(queue, 11);
+    dequeue(queue);
+
+    inQueueInt(queue, 13);
+
+    inQueueInt(queue, 15);
+
+    inQueueInt(queue, 14);
+    dequeue(queue);
+    dequeue(queue);
+    dequeue(queue);
+    inQueueInt(queue, 14);
+    inQueueInt(queue, 14);
+    inQueueInt(queue, 14);
+    inQueueInt(queue, 14);
+
+    for(int i=0;i<queue->MAXQSIZE;i++) {
+        printf("-%d-",queue->nodes[i]->val);
+    }
+
 }
 
 void structpart() {
 //    testLinkList();
 //    testBinaryTree();
 //    testHuffman();
-//    testSort();
+    testSort();
 
     //right2LeftBinaryTreeLeaf();
-    linkMaxNumSearch();
+//    linkMaxNumSearch();
+//    getScore();
+//    inputNum();
+//    testQueue();
+//    YangHuiTriangle(10);
 }
 
 

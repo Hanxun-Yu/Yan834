@@ -7,10 +7,12 @@
 
 
 void bubbleSort(int* arr, int size);
+void bubbleDoubleDirSort(int *arr, int size);
+
 void insertSort(int* arr, int size);
 void selectSort(int* arr, int size);
 void quickSort(int* arr, int size);
 void mergeSort(int* arr, int size);
-
+void shellSort(int* arr, int size);
 void printArr(int* arr, int size);
 #endif //YAN834_SORTER_H

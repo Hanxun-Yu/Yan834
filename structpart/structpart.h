@@ -5,7 +5,7 @@
 #ifndef YAN834_STRUCTPART_H
 #define YAN834_STRUCTPART_H
 
-#include "LinkList.h"
+#include "linear/LinkList.h"
 
 void structpart();
 #endif //YAN834_STRUCTPART_H
