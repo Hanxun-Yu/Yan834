@@ -63,8 +63,8 @@ void testHuffman() {
 void testSort() {
     int arr[] = {24, 13, 56, 34, 73, 41, 53, 23, 12, 65};
     int length = sizeof(arr) / sizeof(int);
-//    bubbleSort(arr,length);
-    insertSort(arr, length);
+    bubbleSort(arr,length);
+//    insertSort(arr, length);
     printArr(arr, length);
 }
 
@@ -72,9 +72,9 @@ void structpart() {
 //    testLinkList();
 //    testBinaryTree();
 //    testHuffman();
-//    testSort();
+    testSort();
 
-    right2LeftBinaryTreeLeaf();
+//    right2LeftBinaryTreeLeaf();
 }
 
 

@@ -14,19 +14,20 @@ void swap(int *a, int *b) {
 
 void bubbleSort(int *arr, int size) {
     int swapped;
-    do {
+    for(int i=0;i<size;i++) {
         swapped = 0;//swap not happened
-        for (int j = 0; j < size; j++) {
-            //ignore last item
-            if (j == size - 1)
-                continue;
+        //ignore last item
+        for (int j = 0; j < size - i - 1; j++) {
 
             if (arr[j] > arr[j + 1]) {
                 swap(&arr[j], &arr[j + 1]);
                 swapped = 1;//swap happened
             }
         }
-    } while (swapped);
+        if(!swapped) {
+            break;
+        }
+    }
 }
 
 void insertSort(int *arr, int size) {
