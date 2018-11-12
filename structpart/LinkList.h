@@ -19,12 +19,14 @@ struct LinkList {
     int length;
 };
 
+Node* newNode(int data);
 LinkList* create(int size);
 int insert(LinkList* list, int data);
 int delete(LinkList* list, int data);
 int isFull(LinkList* list);
 int isEmpty(LinkList* list);
 int reverse(LinkList* list);
+void inverse(Node **h);
 void printSelf(LinkList* list);
 
 

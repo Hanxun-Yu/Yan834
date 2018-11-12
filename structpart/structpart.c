@@ -72,9 +72,10 @@ void structpart() {
 //    testLinkList();
 //    testBinaryTree();
 //    testHuffman();
-    testSort();
+//    testSort();
 
-//    right2LeftBinaryTreeLeaf();
+    //right2LeftBinaryTreeLeaf();
+    linkMaxNumSearch();
 }
 
 

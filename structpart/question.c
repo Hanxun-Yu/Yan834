@@ -4,7 +4,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
+#include "question.h"
 typedef struct ElemType ElemType;
 struct ElemType {
     int data;
@@ -110,3 +110,69 @@ NodeList *getLeafNode(LinkList2 *tree, NodeList *nodeList) {
     }
     return  nodeList;
 }
+int Max(Node* f) {
+    if(!f)
+        return 0;
+    if(f->next) {
+        int temp=Max(f->next);
+        if(temp > f->data)
+            return temp;
+        else
+            return f->data;
+    } else {
+        return f->data;
+    }
+}
+
+int Num(Node* f) {
+    if(!f)
+        return 0;
+    if(f->next) {
+        int num = Num(f->next);
+        return num+1;
+    } else {
+        return 1;
+    }
+
+}
+
+Node* Search(Node* f,int x) {
+    if(!f)
+        return 0;
+    if(f->data != x) {
+        if(f->next)
+            return Search(f->next,x);
+        else
+            return 0;
+    } else {
+        return f;
+    }
+}
+
+void linkMaxNumSearch() {
+    Node* a = newNode(20);
+    a->next= newNode(30);
+    a->next->next= newNode(34);
+    a->next->next->next= newNode(25);
+    a->next->next->next->next= newNode(120);
+    printf("120:%p\n",a->next->next->next->next);
+    a->next->next->next->next->next= newNode(34);
+    a->next->next->next->next->next->next= newNode(39);
+    a->next->next->next->next->next->next->next= newNode(50);
+    a->next->next->next->next->next->next->next->next= 0;
+
+            //Max
+    printf("max:%d\n",Max(a));
+    printf("num:%d\n",Num(a));
+    printf("num:%p\n",Search(a,120));
+
+    inverse(&a);
+    do {
+        printf("-%d-",a->data);
+        a=a->next;
+    }while (a);
+    printf("\n");
+
+}
+
+
