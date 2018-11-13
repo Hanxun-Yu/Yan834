@@ -66,7 +66,8 @@ void testSort() {
     int length = sizeof(arr) / sizeof(int);
 //    bubbleDoubleDirSort(arr, length);
 //    insertSort(arr, length);
-    shellSort(arr,length);
+//    shellSort(arr,length);
+    quickSort(arr,length);
     printArr(arr, length);
 }
 

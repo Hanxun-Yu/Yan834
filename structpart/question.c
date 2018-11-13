@@ -260,15 +260,15 @@ void inputNum() {
 
 
 void YangHuiTriangle(int N) {
-    Queue *queue = newQueue(N+1);
+    Queue *queue = newQueue(N + 1);
     inQueueInt(queue, 1);
 
     for (int i = 0; i < N; i++) {
-        printf("line %d:",i);
+        printf("line %d:", i);
         inQueueInt(queue, 1);
 
-        int spaceTime = N-i;
-        while(spaceTime-- > 0) {
+        int spaceTime = N - i;
+        while (spaceTime-- > 0) {
             printf(" ");
         }
 
@@ -278,11 +278,30 @@ void YangHuiTriangle(int N) {
             printf("%d ", temp);
             int head = getHead(queue)->val;
 //            printf("%d ", head);
-            inQueueInt(queue,temp+head);
+            inQueueInt(queue, temp + head);
         }
         printf("%d\n", dequeue(queue)->val);
-        inQueueInt(queue,1);
+        inQueueInt(queue, 1);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
