@@ -16,4 +16,6 @@ int getScore();
 void inputNum();
 
 void YangHuiTriangle(int N);
+void     yanghui2(int N);
+
 #endif //YAN834_QUESTION_H

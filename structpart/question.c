@@ -305,3 +305,55 @@ void YangHuiTriangle(int N) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void yanghui2(int n) {
+    Queue* queue = newQueue(n+1);
+    inQueueInt(queue,1);
+    for(int i=0;i<n;i++) {
+        inQueueInt(queue,1);
+        for(int j=0;j<i;j++) {
+            int temp = dequeue(queue)->val;
+            printf(" %d",temp);
+            inQueueInt(queue,temp+getHead(queue)->val);
+        }
+        printf(" %d\n",dequeue(queue)->val);
+        inQueueInt(queue,1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

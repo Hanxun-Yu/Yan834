@@ -121,7 +121,7 @@ void structpart() {
 //    testLinkList();
 //    testBinaryTree();
 //    testHuffman();
-    testSort();
+//    testSort();
 
     //right2LeftBinaryTreeLeaf();
 //    linkMaxNumSearch();
@@ -129,6 +129,7 @@ void structpart() {
 //    inputNum();
 //    testQueue();
 //    YangHuiTriangle(10);
+    yanghui2(10);
 }
 
 
