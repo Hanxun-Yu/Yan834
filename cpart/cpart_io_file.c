@@ -47,21 +47,25 @@ char *readFile(char *path) {
     FILE *file = fopen(path, "r");
     printf("open file:%p\n", file);
     //fgetc
-    printf("fgetc:%c\n", fgetc(file));
+//    printf("fgetc:%c\n", fgetc(file));
 
     //fgets
-    char buff2[100];
-    fgets(buff2,255,file);
-    printf("fgets:%s\n",buff2 );
-    fgets(buff2,255,file);
-    printf("fgets:%s\n",buff2 );
+//    char buff2[100];
+//    fgets(buff2,255,file);
+//    printf("fgets:%s\n",buff2 );
+//    fgets(buff2,255,file);
+//    printf("fgets:%s\n",buff2 );
 
     char buff[100];
-    fscanf(file,"ss:%s",buff);
+//    fscanf(file,"ss:%s",buff);
     //fscanf
-    printf("fscanf:%s\n",buff);
-    fscanf(file,"ss:%s",buff);
+//    printf("fscanf:%s\n",buff);
+//    fscanf(file,"ss:%s",buff);
+//    printf("fscanf:%s\n",buff);
 
+    while(fgets(buff,100,file) != NULL) {
+        printf("fscanf:%s\n",buff);
+    }
     fclose(file);
 
 }

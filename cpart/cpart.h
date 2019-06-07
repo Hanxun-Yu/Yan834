@@ -33,7 +33,7 @@ void arrayPoint();
 
 void printIntArr(int32_t *arr, int32_t size);
 
-
+int binarySearch(int32_t *arr, int32_t size, int32_t key);
 
 
 

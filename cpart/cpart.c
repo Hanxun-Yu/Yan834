@@ -16,6 +16,8 @@ void cpart() {
 //    writeFileOver("/cygdrive/d/test_openfile.txt","abcd1234");
 //    readFile("/cygdrive/d/test_openfile.txt");
 
+    readFile("/Users/xunxun/testc.txt");
+
 //    structT();
 //    unionT();
 
@@ -60,6 +62,10 @@ void cpart() {
     int ret = 3;
     ret *=haha + heihei;
     printf("%d\n", ret);
+
+
+    int arr[] = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+    printf("binarySearch:%d\n",binarySearch(arr,13,));
 
 
     //-------------------------------------------------
@@ -152,4 +158,24 @@ void printIntArr(int *arr, int size) {
     }
     printf("}\n");
 
+}
+
+
+int binarySearch(int32_t *arr, int32_t size, int32_t key) {
+    int ret = -1;
+    int low = 0;
+    int high = size - 1;
+    int mid;
+    while(low <= high) {
+        mid = (low+high)/2;
+        if(key == arr[mid]) {
+            ret = mid;
+            break;
+        } else if (key > arr[mid]) {
+            low = mid+1;
+        } else {
+            high = mid -1;
+        }
+    }
+    return ret;
 }
