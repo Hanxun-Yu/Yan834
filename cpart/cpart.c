@@ -5,15 +5,16 @@
 #include "cpart.h"
 
 void testStatic();
+void scattered();
 
 void cpart() {
     //defineDataType();
 
 //    function();
 //    arrayPoint();
-//    stdIn();
+    stdIn();
 
-//    writeFileOver("/cygdrive/d/test_openfile.txt","abcd1234");
+//    writeFileOver("/cygdrive/d/test_openfile.txt","abcd1234\n2dwadwa\n3dawdw");
 //    readFile("/cygdrive/d/test_openfile.txt");
 
     readFile("/Users/xunxun/testc.txt");
@@ -21,6 +22,8 @@ void cpart() {
 //    structT();
 //    unionT();
 
+}
+void scattered() {
 
     //-------------------------------------------------
 
@@ -70,7 +73,6 @@ void cpart() {
 
     //-------------------------------------------------
 }
-
 void testStatic() {
     static int haha = 0;
     printf("haha1:%d\n", haha);

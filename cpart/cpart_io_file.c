@@ -1,6 +1,7 @@
 //
 // Created by yuhanxun on 2018/11/2.
 //
+#include <memory.h>
 #include "cpart_io_file.h"
 
 void writeFileOver(char *path, char *content) {
@@ -46,6 +47,9 @@ void writeFileAdd(char *path, char *content) {
 char *readFile(char *path) {
     FILE *file = fopen(path, "r");
     printf("open file:%p\n", file);
+    char buff2[100];
+
+
     //fgetc
 //    printf("fgetc:%c\n", fgetc(file));
 
@@ -62,6 +66,21 @@ char *readFile(char *path) {
 //    printf("fscanf:%s\n",buff);
 //    fscanf(file,"ss:%s",buff);
 //    printf("fscanf:%s\n",buff);
+//
+
+//    char buff[100];
+//    fscanf(file,"ss:%s",buff);
+    //fscanf
+//    printf("fscanf:%s\n",buff);
+//
+//    fscanf(file,"ss:%s",buff);
+
+
+    while (!feof(file)) {
+        memset(buff2,0,100);
+        fgets(buff2, 255, file);
+        printf("fgets:%s", buff2);
+    }
 
     while(fgets(buff,100,file) != NULL) {
         printf("fscanf:%s\n",buff);

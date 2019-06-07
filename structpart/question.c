@@ -4,7 +4,10 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <memory.h>
+#include <linear/Queue.h>
 #include "question.h"
+
 typedef struct ElemType ElemType;
 struct ElemType {
     int data;
@@ -31,7 +34,8 @@ LinkList2 *newLinkList2(ElemType elemType) {
     return t1;
 }
 
-NodeList * head;
+NodeList *head;
+
 void right2LeftBinaryTreeLeaf() {
 
     ElemType e1 = {1};
@@ -108,14 +112,15 @@ NodeList *getLeafNode(LinkList2 *tree, NodeList *nodeList) {
             return newNode;
         }
     }
-    return  nodeList;
+    return nodeList;
 }
-int Max(Node* f) {
-    if(!f)
+
+int Max(Node *f) {
+    if (!f)
         return 0;
-    if(f->next) {
-        int temp=Max(f->next);
-        if(temp > f->data)
+    if (f->next) {
+        int temp = Max(f->next);
+        if (temp > f->data)
             return temp;
         else
             return f->data;
@@ -124,24 +129,24 @@ int Max(Node* f) {
     }
 }
 
-int Num(Node* f) {
-    if(!f)
+int Num(Node *f) {
+    if (!f)
         return 0;
-    if(f->next) {
+    if (f->next) {
         int num = Num(f->next);
-        return num+1;
+        return num + 1;
     } else {
         return 1;
     }
 
 }
 
-Node* Search(Node* f,int x) {
-    if(!f)
+Node *Search(Node *f, int x) {
+    if (!f)
         return 0;
-    if(f->data != x) {
-        if(f->next)
-            return Search(f->next,x);
+    if (f->data != x) {
+        if (f->next)
+            return Search(f->next, x);
         else
             return 0;
     } else {
@@ -150,29 +155,205 @@ Node* Search(Node* f,int x) {
 }
 
 void linkMaxNumSearch() {
-    Node* a = newNode(20);
-    a->next= newNode(30);
-    a->next->next= newNode(34);
-    a->next->next->next= newNode(25);
-    a->next->next->next->next= newNode(120);
-    printf("120:%p\n",a->next->next->next->next);
-    a->next->next->next->next->next= newNode(34);
-    a->next->next->next->next->next->next= newNode(39);
-    a->next->next->next->next->next->next->next= newNode(50);
-    a->next->next->next->next->next->next->next->next= 0;
+    Node *a = newNode(20);
+    a->next = newNode(30);
+    a->next->next = newNode(34);
+    a->next->next->next = newNode(25);
+    a->next->next->next->next = newNode(120);
+    printf("120:%p\n", a->next->next->next->next);
+    a->next->next->next->next->next = newNode(34);
+    a->next->next->next->next->next->next = newNode(39);
+    a->next->next->next->next->next->next->next = newNode(50);
+    a->next->next->next->next->next->next->next->next = 0;
 
-            //Max
-    printf("max:%d\n",Max(a));
-    printf("num:%d\n",Num(a));
-    printf("num:%p\n",Search(a,120));
+    //Max
+    printf("max:%d\n", Max(a));
+    printf("num:%d\n", Num(a));
+    printf("num:%p\n", Search(a, 120));
 
     inverse(&a);
     do {
-        printf("-%d-",a->data);
-        a=a->next;
-    }while (a);
+        printf("-%d-", a->data);
+        a = a->next;
+    } while (a);
     printf("\n");
 
 }
+
+int findScore(char *data);
+
+int getScore() {
+    const char *path = "/cygdrive/d/test_readfile_getdata.txt";
+    remove(path);
+    FILE *wfp = fopen(path, "w");
+    fputs("MAN 56\n", wfp);
+    fputs("FEM 34\n", wfp);
+    fputs("MAN 56\n", wfp);
+    fputs("FEM 12\n", wfp);
+    fputs("MAN 87\n", wfp);
+    fputs("FEM 56\n", wfp);
+    fputs("MAN 84\n", wfp);
+    fputs("FEM 56\n", wfp);
+    fputs("MAN 34\n", wfp);
+    fputs("FEM 89\n", wfp);
+    fputs("MAN 95\n", wfp);
+    fputs("MAN 100\n", wfp);
+    fputs("FEM 45\n", wfp);
+    fputs("MAN 38\n", wfp);
+    fputs("MAN 94\n", wfp);
+    fclose(wfp);
+
+
+    FILE *fp = fopen(path, "r");
+    char buff[10];
+    int score[50];
+    int index = 0;
+    while (!feof(fp)) {
+        memset(buff, -1, 10);
+        fgets(buff, 10, fp);
+        score[index++] = findScore(buff);
+    }
+
+
+}
+
+int findScore(char *data) {
+
+    char c = -1;
+    int index = 0;
+    int start = 0;
+    char subScore[4];
+    int subScoreIndex = 0;
+    do {
+        c = data[index];
+        if (start) {
+            subScore[subScoreIndex++] = c;
+        }
+
+        if (c == ' ') {
+            start = 1;
+            subScoreIndex = 0;
+        }
+
+
+    } while (data[++index] != '\n');
+    return atoi(subScore);
+
+}
+
+void inputNum() {
+    int arr[10];
+    int time = 10;
+    int index = 0;
+    char buff[10];
+    while (time-- > 0) {
+        memset(buff, 0, 10);
+        printf("please input:");
+        arr[index++] = atoi(gets(buff));
+    }
+
+
+    for (int i = 0; i < 10; i++) {
+        printf("data:%d\n", arr[i]);
+    }
+}
+
+
+void YangHuiTriangle(int N) {
+    Queue *queue = newQueue(N + 1);
+    inQueueInt(queue, 1);
+
+    for (int i = 0; i < N; i++) {
+        printf("line %d:", i);
+        inQueueInt(queue, 1);
+
+        int spaceTime = N - i;
+        while (spaceTime-- > 0) {
+            printf(" ");
+        }
+
+
+        for (int j = 0; j < i; j++) {
+            int temp = dequeue(queue)->val;
+            printf("%d ", temp);
+            int head = getHead(queue)->val;
+//            printf("%d ", head);
+            inQueueInt(queue, temp + head);
+        }
+        printf("%d\n", dequeue(queue)->val);
+        inQueueInt(queue, 1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void yanghui2(int n) {
+    Queue* queue = newQueue(n+1);
+    inQueueInt(queue,1);
+    for(int i=0;i<n;i++) {
+        inQueueInt(queue,1);
+        for(int j=0;j<i;j++) {
+            int temp = dequeue(queue)->val;
+            printf(" %d",temp);
+            inQueueInt(queue,temp+getHead(queue)->val);
+        }
+        printf(" %d\n",dequeue(queue)->val);
+        inQueueInt(queue,1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

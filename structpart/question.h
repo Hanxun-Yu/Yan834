@@ -5,9 +5,17 @@
 #ifndef YAN834_QUESTION_H
 #define YAN834_QUESTION_H
 
-#include "LinkList.h"
+#include "linear/LinkList.h"
 
 void right2LeftBinaryTreeLeaf();
 
 void linkMaxNumSearch();
+
+int getScore();
+
+void inputNum();
+
+void YangHuiTriangle(int N);
+void     yanghui2(int N);
+
 #endif //YAN834_QUESTION_H

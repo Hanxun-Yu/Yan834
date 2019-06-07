@@ -3,12 +3,12 @@
 //
 #include "cpart_io_std.h"
 
-void getputChar(){
+void getputChar() {
     //getchar()
     //putchar()
     //换行也算在内了,所以只能输入5个
     printf("Please input 10 characters!\n");
-    for(int i = 0;i<10;i++) {
+    for (int i = 0; i < 10; i++) {
         char c = getchar();
         putchar(c);
     }
@@ -29,18 +29,25 @@ void scanfT() {
     char str[100];
     int i;
     printf("Enter a value twice:");
-    scanf("%s %d",str,&i);
-    printf("Your enter:%s %d\n",str,i);
+    scanf("%s %d", str, &i);
+    printf("Your enter:%s %d\n", str, i);
 }
 
 
 void stdIn() {
+    int i = 3;
+    while (i-- > 0) {
+        getsputs();
+    }
 
-//    getputChar();
+
+
+//        getputChar();
 //    getsputs();
-    scanfT();
+//    scanfT();
 
 }
+
 void stdOut() {
 
 }

@@ -7,6 +7,10 @@ include_directories(cpart)
 include_directories(structpart)
 include_directories(structpart/hash)
 include_directories(structpart/tree)
+include_directories(structpart/node)
+include_directories(structpart/linear)
+
+
 
 add_executable(Yan834
         cpart/cpart.c
@@ -28,14 +32,14 @@ add_executable(Yan834
         structpart/tree/KVBinaryTree.h
         structpart/tree/SearchBinaryTree.c
         structpart/tree/SearchBinaryTree.h
-        structpart/LinkList.c
-        structpart/LinkList.h
+        structpart/linear/LinkList.c
+        structpart/linear/LinkList.h
         structpart/question.c
         structpart/question.h
         structpart/sorter.c
         structpart/sorter.h
         structpart/structpart.c
         structpart/structpart.h
-        structpart/TypeElement.c
-        structpart/TypeElement.h
-        main.c)
+        structpart/node/TypeElement.c
+        structpart/node/TypeElement.h
+        main.c structpart/linear/Queue.c structpart/linear/Queue.h)
