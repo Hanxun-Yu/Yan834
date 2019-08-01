@@ -3,6 +3,7 @@ project(Yan834 C)
 
 set(CMAKE_C_STANDARD 11)
 
+include_directories(include)
 include_directories(cpart)
 include_directories(structpart)
 include_directories(structpart/hash)
@@ -15,13 +16,12 @@ include_directories(structpart/linear)
 add_executable(Yan834
         cpart/cpart.c
         cpart/cpart.h
-        cpart/cpart_io_file.c
-        cpart/cpart_io_file.h
-        cpart/cpart_io_std.c
-        cpart/cpart_io_std.h
-        cpart/cpart_lib_std.h
-        cpart/cpart_struct_union.c
-        cpart/cpart_struct_union.h
+        cpart/io/cpart_io_file.c
+        cpart/io/cpart_io_file.h
+        cpart/io/cpart_io_std.c
+        cpart/io/cpart_io_std.h
+        cpart/struct_union/cpart_struct_union.c
+        cpart/struct_union/cpart_struct_union.h
         structpart/hash/HashTable.c
         structpart/hash/HashTable.h
         structpart/tree/BinaryTree.c
@@ -34,12 +34,12 @@ add_executable(Yan834
         structpart/tree/SearchBinaryTree.h
         structpart/linear/LinkList.c
         structpart/linear/LinkList.h
-        structpart/question.c
-        structpart/question.h
-        structpart/sorter.c
-        structpart/sorter.h
+        structpart/question/question.c
+        structpart/question/question.h
+        structpart/sort/sorter.c
+        structpart/sort/sorter.h
         structpart/structpart.c
         structpart/structpart.h
         structpart/node/TypeElement.c
         structpart/node/TypeElement.h
-        main.c structpart/linear/Queue.c structpart/linear/Queue.h)
+        main.c structpart/linear/Queue.c structpart/linear/Queue.h include/common.h)

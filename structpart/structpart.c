@@ -8,8 +8,8 @@
 #include "SearchBinaryTree.h"
 #include "Huffman.h"
 #include "HashTable.h"
-#include "sorter.h"
-#include "question.h"
+#include "sort/sorter.h"
+#include "question/question.h"
 #include "Queue.h"
 
 void testLinkList() {

@@ -11,6 +11,7 @@ struct People {
   int age;
 };
 void structT();
+void structMemory();
 void unionT();
 void printPeopleType(People people);
 void printPeopleTypePoint(People* people);
@@ -22,6 +23,13 @@ union Common{
     int one;
     int two;
     char str[40];
+};
+
+struct MyStruct
+{
+    int a;
+    int b;
+    char c[10];
 };
 
 #endif //YAN834_CPART_STRUCT_UNION_H

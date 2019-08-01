@@ -39,9 +39,6 @@ void stdIn() {
     while (i-- > 0) {
         getsputs();
     }
-
-
-
 //        getputChar();
 //    getsputs();
 //    scanfT();
