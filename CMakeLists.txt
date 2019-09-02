@@ -40,6 +40,6 @@ add_executable(Yan834
         structpart/sort/sorter.h
         structpart/structpart.c
         structpart/structpart.h
-        structpart/node/TypeElement.c
-        structpart/node/TypeElement.h
-        main.c structpart/linear/Queue.c structpart/linear/Queue.h include/common.h)
+        structpart/node/Data.c
+        structpart/node/Data.h
+        main.c structpart/linear/Queue.c structpart/linear/Queue.h include/common.h structpart/linear/SingleLink.h structpart/linear/LoopLink.h structpart/linear/BiDirectionLink.h)

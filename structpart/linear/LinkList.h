@@ -5,12 +5,9 @@
 #ifndef YAN834_LINKLIST_H
 #define YAN834_LINKLIST_H
 
-typedef struct Node Node;
+
 typedef struct LinkList LinkList;
-typedef struct Node {
-    int data;
-    Node * next;
-};
+
 
 struct LinkList {
     Node* head;

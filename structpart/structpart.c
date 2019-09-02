@@ -129,7 +129,6 @@ void structpart() {
 //    inputNum();
 //    testQueue();
 //    YangHuiTriangle(10);
-    yanghui2(10);
 }
 
 

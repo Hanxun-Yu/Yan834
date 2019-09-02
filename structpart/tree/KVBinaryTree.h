@@ -10,14 +10,14 @@
 
 typedef struct KVBinaryTree KVBinaryTree;
 struct KVBinaryTree {
-    TypeElement *data;
+    Data *data;
     KVBinaryTree *leftTree;
     KVBinaryTree *rightTree;
 
     void (*printTravel)(KVBinaryTree *this);
 
 };
-KVBinaryTree* newKVBinaryTree(TypeElement* typeElement);
+KVBinaryTree* newKVBinaryTree(Data* typeElement);
 void printKVBinaryTreeTravel(KVBinaryTree *this);
 
 #endif //YAN834_KVBINARYTREE_H

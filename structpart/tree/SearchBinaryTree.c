@@ -6,7 +6,7 @@
 #include "SearchBinaryTree.h"
 
 
-BinaryTree* newSearchBinaryTree(TypeElement* typeElement) {
+BinaryTree* newSearchBinaryTree(Data* typeElement) {
     BinaryTree* ret = newBinaryTree(typeElement);
     ret->addChildTree = addChildSearchBinaryTree;
     ret->printTravel = printSearchBinaryTreeTravel;
@@ -15,7 +15,7 @@ BinaryTree* newSearchBinaryTree(TypeElement* typeElement) {
 
 void addChildSearchBinaryTree(BinaryTree *this, BinaryTree *childTree) {
     printf("addChildSearchBinaryTree\n");
-    if(((TypeElement*)this->data)->getValue(this->data) > ((TypeElement*)childTree->data)->getValue(childTree->data)) {
+    if(((Data*)this->data)->value > ((Data*)childTree->data)->value) {
 //        //left
         if(this->leftTree) {
             this->leftTree->addChildTree(this->leftTree,childTree);
@@ -35,7 +35,7 @@ void addChildSearchBinaryTree(BinaryTree *this, BinaryTree *childTree) {
 void printSearchBinaryTreeTravel(BinaryTree* this) {
     if(this->leftTree)
         this->leftTree->printTravel(this->leftTree);
-    printf("-%d-",(((TypeElement*)this->data))->getValue(this->data));
+    printf("-%d-",(((Data*)this->data))->value);
     if(this->rightTree)
         this->rightTree->printTravel(this->rightTree);
 }

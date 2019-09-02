@@ -11,7 +11,7 @@
  * @param typeElement
  * @return
  */
-BinaryTree* newSearchBinaryTree(TypeElement* typeElement) ;
+BinaryTree* newSearchBinaryTree(Data* typeElement) ;
 void printSearchBinaryTreeTravel(BinaryTree *this);
 void addChildSearchBinaryTree(BinaryTree *this, BinaryTree *childTree);
 

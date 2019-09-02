@@ -5,7 +5,7 @@
 #ifndef YAN834_BINARYTREE_H
 #define YAN834_BINARYTREE_H
 
-#include "node/TypeElement.h"
+#include "node/Data.h"
 
 typedef struct BinaryTree BinaryTree;
 

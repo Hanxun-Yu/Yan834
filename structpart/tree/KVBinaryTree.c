@@ -10,7 +10,7 @@ int getValue(KVBinaryTree *this);
 
 char *getName(KVBinaryTree *this);
 
-KVBinaryTree *newKVBinaryTree(TypeElement *typeElement) {
+KVBinaryTree *newKVBinaryTree(Data *typeElement) {
     KVBinaryTree *ret = malloc(sizeof(KVBinaryTree));
     ret->data = typeElement;
     ret->leftTree = NULL;
@@ -28,9 +28,9 @@ void printKVBinaryTreeTravel(KVBinaryTree *this) {
 }
 
 int getValue(KVBinaryTree *this) {
-    return this->data->getValue(this->data);
+    return this->data->value;
 }
 
 char *getName(KVBinaryTree *this) {
-    return this->data->getName(this->data);
+    return this->data->name;
 }

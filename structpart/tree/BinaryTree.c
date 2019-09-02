@@ -7,7 +7,7 @@
 #include "BinaryTree.h"
 
 
-//BinaryTree *newBinaryTree(TypeElement *element) {
+//BinaryTree *newBinaryTree(Data *element) {
 //    BinaryTree *ret = malloc(sizeof(BinaryTree));
 //    ret->data = element;
 //    ret->leftTree = NULL;
@@ -52,7 +52,7 @@ void addChildTree(BinaryTree *this, BinaryTree *childTree) {
         }
     }
 
-//    if(((TypeElement*)this->data)->val > ((TypeElement*)childTree->data)->val) {
+//    if(((Data*)this->data)->val > ((Data*)childTree->data)->val) {
 ////        //left
 //        if(this->leftTree) {
 //            this->leftTree->addChildTree(this->leftTree,childTree);

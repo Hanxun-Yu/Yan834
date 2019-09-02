@@ -13,6 +13,7 @@ struct People {
 void structT();
 void structMemory();
 void unionT();
+
 void printPeopleType(People people);
 void printPeopleTypePoint(People* people);
 void printPeopleStuct(struct People people);
